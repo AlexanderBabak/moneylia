@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, Alert} from 'react-native';
+import {NativeBaseProvider, Box} from 'native-base';
 
 export const App = () => {
   return (
-    <View style={styles.view}>
-      <Text style={styles.text}>Babak connection</Text>
-    </View>
+    <NativeBaseProvider>
+      <Box>Hello world</Box>
+    </NativeBaseProvider>
   );
 };
 
