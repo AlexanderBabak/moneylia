@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Rubik-Medium.ttf",
+      "sha1": "c91959545dae337c923ad06bfd0ef27f94a97933"
+    },
+    {
+      "path": "src/assets/fonts/Rubik-Regular.ttf",
+      "sha1": "a7748ad21296101be2698dc585c7194ed43385ea"
+    },
+    {
+      "path": "src/assets/fonts/WorkSans-Regular.ttf",
+      "sha1": "89a5d38e1316b70da48e9475628023264af74783"
+    },
+    {
+      "path": "src/assets/fonts/WorkSans-SemiBold.ttf",
+      "sha1": "f12114ffb09b58990f7aab420b592c3e4315ff95"
+    }
+  ]
+}
