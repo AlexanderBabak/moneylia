@@ -1,7 +1,7 @@
-import { ScrollView, Text, Flex, Link, Button } from 'native-base';
 import React from 'react';
+import { ScrollView, Text, Flex, Link, Button } from 'native-base';
 
-export const TestContext = () => {
+export const PagoScreen = () => {
   return (
     <ScrollView>
       <Flex
