@@ -23,7 +23,7 @@ export const DashboardScreen = () => {
   return (
     <ScrollView>
       <StatusBar backgroundColor="#7476ED" barStyle="default" />
-      <Container bgColor="brand.main" statusBarColor={colors.brand.main}>
+      <Container bgColor="brand.main">
         <Box
           height={193}
           bgColor="brand.main"
