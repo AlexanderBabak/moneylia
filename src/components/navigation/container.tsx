@@ -1,7 +1,7 @@
 import { View, Pressable, HStack, useTheme } from 'native-base';
 import React from 'react';
-import LogoIcon from '../assets/svg-icons/logo-icon';
-import ChatIcon from '../assets/svg-icons/chat-icon';
+import LogoIcon from '../../assets/svg-icons/logo-icon';
+import ChatIcon from '../../assets/svg-icons/chat-icon';
 
 // пофиксить any
 

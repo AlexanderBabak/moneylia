@@ -1,7 +1,7 @@
 import { Text, HStack, Center, useTheme } from 'native-base';
 import React from 'react';
 
-import { Container } from '../../navigation/container';
+import { Container } from '../../components/navigation/container';
 
 export const ExtractScreen = () => {
   const { colors } = useTheme();

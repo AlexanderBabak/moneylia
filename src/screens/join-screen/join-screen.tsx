@@ -1,38 +1,73 @@
 import React from 'react';
-import { ScrollView, Text, Flex, Link, Button } from 'native-base';
+import {
+  Center,
+  Heading,
+  Text,
+  VStack,
+  Pressable,
+  Box,
+  Link,
+} from 'native-base';
+import { Image } from 'react-native';
 
-export const PagoScreen = () => {
+export const JoinScreen = () => {
   return (
-    <ScrollView>
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        width="290"
-        margin="auto"
-      >
-        <Text color="text.main" fontSize={32} fontWeight="600">
-          Save your money
-        </Text>
-        <Text
-          color="text.neutralMedium"
-          fontWeight="400"
-          textAlign="center"
-          lineHeight="21"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in quis
-          erat a sit.
-        </Text>
-        <Button
-          bgColor="brand.main"
-          width="100%"
-          onPress={() => console.log('hello world')}
-        >
-          <Text fontWeight="600" color="white" fontSize="18" lineHeight="20">
-            Join for free
-          </Text>
-        </Button>
-        <Link href="#">Don't have SPID or CIE? Find out more</Link>
-      </Flex>
-    </ScrollView>
+    <Center bg="white">
+      <Center maxW={300} paddingY={33}>
+        <VStack alignItems="center" justifyContent="space-around" height="100%">
+          <Image
+            source={require('../../assets/images/join-screen-image.png')}
+          />
+          <VStack alignItems="center" space={2}>
+            <Heading
+              fontWeight={600}
+              fontSize={32}
+              lineHeight={38}
+              color="text.main"
+            >
+              Save your money
+            </Heading>
+            <Text textAlign="center" lineHeight={21} color="text.neutralMedium">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in
+              quis erat a sit.
+            </Text>
+          </VStack>
+
+          <Pressable
+            onPress={() => console.log('Button pressed!!!')}
+            alignSelf="stretch"
+          >
+            {({ isPressed }) => (
+              <Box
+                bg={isPressed ? 'text.main' : 'brand.main'}
+                style={{
+                  transform: [
+                    {
+                      scale: isPressed ? 0.96 : 1,
+                    },
+                  ],
+                }}
+                p="5"
+                rounded="6"
+                alignItems="center"
+              >
+                <Text
+                  fontSize={18}
+                  fontWeight={600}
+                  lineHeight={18}
+                  color="white"
+                >
+                  Join for free
+                </Text>
+              </Box>
+            )}
+          </Pressable>
+
+          <Link lineHeight={21} color="text.main" href="https://nativebase.io">
+            Don't have SPID or CIE? Find out more
+          </Link>
+        </VStack>
+      </Center>
+    </Center>
   );
 };
