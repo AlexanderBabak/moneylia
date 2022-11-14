@@ -1,8 +1,12 @@
 import React from 'react';
-import { Box, Text, useTheme } from 'native-base';
+import { Box, HStack, Text, useTheme, VStack } from 'native-base';
 import { Container } from '../../navigation/container';
-
 import { CardUser } from '../../components/card-user/card-user';
+import PaidIcon from '../../assets/svg-icons/paid-icon';
+import DueIcon from '../../assets/svg-icons/due-icon';
+import AdvancePaymentIcon from '../../assets/svg-icons/advance-payment-icon';
+import ModularityIcon from '../../assets/svg-icons/modularity-icon';
+import { CardContributions } from '../../components/card-contributions/card-contributions';
 
 //здесь получаю данные о юзере и деньгах с сервера, аксиос гет с json-sserver
 
@@ -37,9 +41,28 @@ export const DashboardScreen = () => {
           fontSize={22}
           lineHeight={24}
           color="text.main"
+          paddingBottom={3}
         >
           Contributions of 2022
         </Text>
+        <VStack space={4}>
+          <HStack space={4}>
+            <CardContributions title="Paid" icon={PaidIcon} />
+            <CardContributions title="Due" icon={DueIcon} />
+          </HStack>
+          <HStack space={4}>
+            <CardContributions
+              title="Advance payment"
+              value="€ 1,230.00"
+              icon={AdvancePaymentIcon}
+            />
+            <CardContributions
+              title="Modularity"
+              value="€ 340.59"
+              icon={ModularityIcon}
+            />
+          </HStack>
+        </VStack>
       </Box>
     </Container>
   );

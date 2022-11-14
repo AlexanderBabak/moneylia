@@ -27,11 +27,12 @@ export const CardUser: React.FC<Props> = ({
       width="90%"
       bgColor="white"
       borderRadius={12}
-      marginTop={'-20'}
+      marginTop={'-24'}
       margin="auto"
-      shadow={1}
+      shadow={0}
       padding={6}
       justifyContent="space-between"
+      marginBottom={1}
     >
       <HStack alignItems="center" space={2}>
         <UserIcon color={colors.brand.main} width={20} height={20} />
