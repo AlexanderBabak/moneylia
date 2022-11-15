@@ -3,14 +3,27 @@ import { Center, Text, VStack, Pressable, HStack } from 'native-base';
 import PagoPaLogoIcon from '../../assets/svg-icons/pago-pa-logo-icon';
 import PaymentArrowIcon from '../../assets/svg-icons/payment-arrow-icon';
 import { Payment } from '../../interfaces/payment-interface';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../interfaces/navigation-interfaces';
 
 type Props = {
   payment: Payment;
 };
 
 export const CardPayment: React.FC<Props> = ({ payment }) => {
+  const navigation: NativeStackNavigationProp<
+    RootStackParamList,
+    'PaymentDetails'
+  > = useNavigation();
   return (
-    <Pressable onPress={() => console.log('Card pressed!!!')}>
+    <Pressable
+      onPress={() => {
+        navigation.navigate('PaymentDetails', {
+          paymentId: payment.taxCode,
+        });
+      }}
+    >
       {({ isPressed }) => (
         <HStack
           height="80px"

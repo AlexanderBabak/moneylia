@@ -11,10 +11,11 @@ export const Container: React.FC<any> = ({ children, bgColor }) => {
     <>
       <View bgColor="#F8F4FF" height="100%">
         <HStack
-          height={60}
+          height={100}
           bgColor={bgColor}
-          alignItems="center"
+          alignItems="flex-end"
           justifyContent="space-between"
+          paddingY={7}
           paddingX={4}
         >
           <LogoIcon color={colors.white} width={28} height={22} />

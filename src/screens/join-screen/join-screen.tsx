@@ -9,8 +9,14 @@ import {
   Link,
 } from 'native-base';
 import { Image } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../interfaces/navigation-interfaces';
 
-export const JoinScreen = () => {
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'JoinScreen'>;
+};
+
+export const JoinScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <Center bg="white">
       <Center maxW={300} paddingY={33}>
@@ -32,9 +38,9 @@ export const JoinScreen = () => {
               quis erat a sit.
             </Text>
           </VStack>
-
+          {/* сделать shared */}
           <Pressable
-            onPress={() => console.log('Button pressed!!!')}
+            onPress={() => navigation.navigate('Main')}
             alignSelf="stretch"
           >
             {({ isPressed }) => (

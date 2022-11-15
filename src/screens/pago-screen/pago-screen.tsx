@@ -181,7 +181,7 @@ export const PagoScreen = () => {
           <PagoPaLogoIcon width={50} height={40} color="#fff" />
         </HStack>
       </Box>
-      <Box padding={4} height="85%">
+      <Box padding={4} height="82%">
         <Heading
           fontSize={24}
           fontWeight={600}

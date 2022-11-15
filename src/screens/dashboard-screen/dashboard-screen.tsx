@@ -22,11 +22,16 @@ export const DashboardScreen = () => {
   const { colors } = useTheme();
   return (
     <ScrollView>
-      <StatusBar backgroundColor="#7476ED" barStyle="default" />
+      <StatusBar
+        barStyle="default"
+        translucent={true}
+        backgroundColor="rgba(0, 102, 204, 0)"
+      />
       <Container bgColor="brand.main">
         <Box
           height={193}
           bgColor="brand.main"
+          // bgColor="amber.500"
           padding={4}
           borderBottomRadius={16}
         >
