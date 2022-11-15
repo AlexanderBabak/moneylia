@@ -1,6 +1,6 @@
+import React from 'react';
 import { Center, Heading, Box } from 'native-base';
 import { Image } from 'react-native';
-import React from 'react';
 import { Container } from '../../navigation/container';
 
 export const ExtractScreen = () => {

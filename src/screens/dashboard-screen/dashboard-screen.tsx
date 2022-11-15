@@ -3,15 +3,16 @@ import { Box, HStack, ScrollView, StatusBar, Text, VStack } from 'native-base';
 import { Container } from '../../navigation/container';
 import { CardUser } from '../../components/card-user/card-user';
 import { CardContributions } from '../../components/card-contributions/card-contributions';
+import { useShortName } from '../../hooks/useShortName';
 import PaidIcon from '../../assets/svg-icons/paid-icon';
 import DueIcon from '../../assets/svg-icons/due-icon';
 import AdvancePaymentIcon from '../../assets/svg-icons/advance-payment-icon';
 import ModularityIcon from '../../assets/svg-icons/modularity-icon';
-import { useShortName } from '../../hooks/useShortName';
 
 //здесь получаю данные о юзере и деньгах с сервера, аксиос гет с json-sserver
 
 export const DashboardScreen = () => {
+  // сюда передать имя
   const { shortName } = useShortName('John Simpson');
 
   return (
@@ -24,9 +25,9 @@ export const DashboardScreen = () => {
       <Container bgColor="brand.main">
         <Box
           height={193}
-          bgColor="brand.main"
           padding={4}
           borderBottomRadius={16}
+          bgColor="brand.main"
         >
           <Text fontWeight={400} fontSize={32} color="white" lineHeight={38}>
             Hello, {shortName}
@@ -48,8 +49,8 @@ export const DashboardScreen = () => {
             fontWeight={500}
             fontSize={22}
             lineHeight={24}
-            color="text.main"
             paddingBottom={3}
+            color="text.main"
           >
             Contributions of 2022
           </Text>

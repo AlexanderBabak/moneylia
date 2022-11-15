@@ -14,14 +14,14 @@ export const PaymentDatailsItem: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <Divider bgColor="#EAEAEC" />
+      <Divider bgColor="divider" />
       <VStack paddingY="14px">
         <Text
           fontSize={16}
           fontWeight={600}
           lineHeight={20}
-          color="text.neutralDark"
           marginBottom="2px"
+          color="text.neutralDark"
         >
           {title}
         </Text>

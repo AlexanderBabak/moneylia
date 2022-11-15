@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text, View } from 'native-base';
+import { useTheme } from 'native-base';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DashboardScreen } from '../../screens/dashboard-screen/dashboard-screen';
 import { ExtractScreen } from '../../screens/extract-screen/extract-screen';
 import { PagoScreen } from '../../screens/pago-screen/pago-screen';
 import { ProfileScreen } from '../../screens/profile-screen/profile-screen';
+import { TabBarBorder } from '../../components/tab-bar/tab-bar-border';
+import { TabBarLabel } from '../../components/tab-bar/tab-bar-label';
 import DashboardTabIcon from '../../assets/svg-icons/dashboard-tab-icon';
 import ExtractTabIcon from '../../assets/svg-icons/extract-tab-icon';
 import PagoPaTabIcon from '../../assets/svg-icons/pago-pa-tab-icon';
@@ -13,6 +15,7 @@ import ProfileTabIcon from '../../assets/svg-icons/profile-tab-icon';
 const Tab = createBottomTabNavigator();
 
 export const MainApp = () => {
+  const { colors } = useTheme();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -23,8 +26,8 @@ export const MainApp = () => {
           paddingTop: 5,
           borderTopWidth: 0.1,
         },
-        tabBarActiveTintColor: '#7476ED',
-        tabBarInactiveTintColor: '#A5A5AA',
+        tabBarActiveTintColor: colors.brand.main,
+        tabBarInactiveTintColor: colors.text.neutralLight,
       }}
     >
       <Tab.Screen
@@ -33,22 +36,12 @@ export const MainApp = () => {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <>
-              {focused && (
-                <View
-                  borderTopWidth={2}
-                  borderTopColor="#7476ED"
-                  width={60}
-                  position="absolute"
-                  top={-5}
-                />
-              )}
+              {focused && <TabBarBorder />}
               <DashboardTabIcon color={color} width={30} height={30} />
             </>
           ),
           tabBarLabel: ({ color }) => (
-            <Text color={color} fontFamily="mono" fontSize={11}>
-              Dashboard
-            </Text>
+            <TabBarLabel color={color} title="Dashboard" />
           ),
         }}
       />
@@ -58,22 +51,12 @@ export const MainApp = () => {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <>
-              {focused && (
-                <View
-                  borderTopWidth={2}
-                  borderTopColor="#7476ED"
-                  width={60}
-                  position="absolute"
-                  top={-5}
-                />
-              )}
+              {focused && <TabBarBorder />}
               <ExtractTabIcon color={color} width={30} height={30} />
             </>
           ),
           tabBarLabel: ({ color }) => (
-            <Text color={color} fontFamily="mono" fontSize={11}>
-              Extract
-            </Text>
+            <TabBarLabel color={color} title="Extract" />
           ),
         }}
       />
@@ -83,22 +66,12 @@ export const MainApp = () => {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <>
-              {focused && (
-                <View
-                  borderTopWidth={2}
-                  borderTopColor="#7476ED"
-                  width={60}
-                  position="absolute"
-                  top={-5}
-                />
-              )}
+              {focused && <TabBarBorder />}
               <PagoPaTabIcon color={color} width={30} height={30} />
             </>
           ),
           tabBarLabel: ({ color }) => (
-            <Text color={color} fontFamily="mono" fontSize={11}>
-              PagoPA
-            </Text>
+            <TabBarLabel color={color} title="PagoPA" />
           ),
         }}
       />
@@ -108,22 +81,12 @@ export const MainApp = () => {
         options={{
           tabBarIcon: ({ color, focused }) => (
             <>
-              {focused && (
-                <View
-                  borderTopWidth={2}
-                  borderTopColor="#7476ED"
-                  width={60}
-                  position="absolute"
-                  top={-5}
-                />
-              )}
+              {focused && <TabBarBorder />}
               <ProfileTabIcon color={color} width={30} height={30} />
             </>
           ),
           tabBarLabel: ({ color }) => (
-            <Text color={color} fontFamily="mono" fontSize={11}>
-              Profile
-            </Text>
+            <TabBarLabel color={color} title="Profile" />
           ),
         }}
       />

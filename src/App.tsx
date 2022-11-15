@@ -7,11 +7,11 @@ import { StackNavigation } from './navigation/stack-navigation/stack-navigation'
 export const App = () => {
   return (
     <>
-      <NavigationContainer>
-        <NativeBaseProvider theme={theme}>
+      <NativeBaseProvider theme={theme}>
+        <NavigationContainer>
           <StackNavigation />
-        </NativeBaseProvider>
-      </NavigationContainer>
+        </NavigationContainer>
+      </NativeBaseProvider>
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, Box, HStack, Heading, FlatList } from 'native-base';
+import { Text, Box, HStack, Heading, FlatList, useTheme } from 'native-base';
 import { Container } from '../../navigation/container';
-import PagoPaLogoIcon from '../../assets/svg-icons/pago-pa-logo-icon';
 import { CardPayment } from '../../components/card-payment/card-payment';
 import { ListRenderItem } from 'react-native';
 import { Payment } from '../../interfaces/payment-interface';
+import PagoPaLogoIcon from '../../assets/svg-icons/pago-pa-logo-icon';
 
 //сделать на серваке точно такой массив и фечить эти данные, они потом передаются в carPayment
 
@@ -162,19 +162,20 @@ const renderItem: ListRenderItem<Payment> = ({ item }) => (
 );
 
 export const PagoScreen = () => {
+  const { colors } = useTheme();
   return (
     <Container bgColor="brand.secondary">
       <Box
         height={82}
-        bgColor="brand.secondary"
         padding={4}
         borderBottomRadius={16}
+        bgColor="brand.secondary"
       >
         <HStack alignItems="center" justifyContent="space-between">
           <Text fontWeight={600} fontSize={24} color="white" lineHeight={28}>
             Tax payments
           </Text>
-          <PagoPaLogoIcon width={50} height={40} color="#fff" />
+          <PagoPaLogoIcon width={50} height={40} color={colors.white} />
         </HStack>
       </Box>
       <Box padding={4} height="82%">
@@ -182,16 +183,16 @@ export const PagoScreen = () => {
           fontSize={24}
           fontWeight={600}
           lineHeight={29}
-          color="text.main"
           marginBottom={1}
+          color="text.main"
         >
           Movements to pay
         </Heading>
         <Text
           fontFamily="mono"
           lineHeight={21}
-          color="text.neutralMedium"
           marginBottom={4}
+          color="text.neutralMedium"
         >
           View pending transactions for the past two years and proceed to
           payment.

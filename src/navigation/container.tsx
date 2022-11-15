@@ -18,14 +18,14 @@ export const Container: React.FC<Props> = ({ children, bgColor }) => {
   const { colors } = useTheme();
   return (
     <>
-      <View bgColor="#F8F4FF" height="100%">
+      <View bgColor="brand.background" height="100%">
         <HStack
           height={100}
-          bgColor={bgColor}
-          alignItems="flex-end"
-          justifyContent="space-between"
           paddingY={7}
           paddingX={4}
+          alignItems="flex-end"
+          justifyContent="space-between"
+          bgColor={bgColor}
         >
           <LogoIcon color={colors.white} width={28} height={22} />
 

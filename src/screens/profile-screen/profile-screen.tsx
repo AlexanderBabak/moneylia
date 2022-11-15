@@ -1,6 +1,6 @@
+import React from 'react';
 import { Center, Heading, Box } from 'native-base';
 import { Image } from 'react-native';
-import React from 'react';
 import { Container } from '../../navigation/container';
 
 export const ProfileScreen = () => {
@@ -13,8 +13,8 @@ export const ProfileScreen = () => {
             fontWeight={600}
             fontSize={32}
             lineHeight={38}
-            color="text.main"
             textAlign="center"
+            color="text.main"
           >
             Your ad could be here
           </Heading>

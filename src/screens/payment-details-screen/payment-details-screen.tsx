@@ -11,10 +11,10 @@ import { PaymentDetailsTotal } from './payment-details-total';
 export const PaymentDetailsScreen = () => {
   return (
     <VStack
-      paddingX={4}
-      bgColor="white"
       h="100%"
+      paddingX={4}
       justifyContent="space-between"
+      bgColor="white"
     >
       <VStack>
         <PaymentDetailsNotice />

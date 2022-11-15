@@ -7,20 +7,21 @@ import HeaderArrowIcon from '../../assets/svg-icons/header-arrow-icon';
 import { useNavigation } from '@react-navigation/native';
 import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs';
 import { RootParamList } from '../../interfaces/navigation-interfaces';
-import { HStack, Text, Pressable, Box } from 'native-base';
+import { HStack, Text, Pressable, Box, useTheme } from 'native-base';
 
 type Props = NativeStackHeaderProps | BottomTabHeaderProps;
 
 export const HeaderNavigation: React.FC<Props> = ({ options }) => {
   const navigation: NativeStackNavigationProp<RootParamList> = useNavigation();
+  const { colors } = useTheme();
 
   return (
     <HStack
-      alignItems="flex-end"
-      justifyContent="center"
-      bgColor="#BF7EE6"
       h={90}
       paddingBottom={4}
+      alignItems="flex-end"
+      justifyContent="center"
+      bgColor="brand.secondary"
     >
       <Pressable
         position="absolute"
@@ -40,7 +41,7 @@ export const HeaderNavigation: React.FC<Props> = ({ options }) => {
               ],
             }}
           >
-            <HeaderArrowIcon color="#fff" />
+            <HeaderArrowIcon color={colors.white} />
           </Box>
         )}
       </Pressable>

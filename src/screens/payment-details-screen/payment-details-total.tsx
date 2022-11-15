@@ -20,15 +20,15 @@ export const PaymentDetailsTotal = () => {
           >
             Total due
           </Heading>
-          {/* sum */}
           <Text fontSize={20} lineHeight={24} color="error.500">
             € 1,634.99
           </Text>
         </HStack>
+
         <ButtonStyled
           title="Pay now"
           color="brand.secondary"
-          pressedColor="#AE61D2"
+          pressedColor="pressedButton"
           onPress={() =>
             Alert.alert('Attention!', 'You are amazing at pushing buttons!')
           }
