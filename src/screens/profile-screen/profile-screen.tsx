@@ -1,4 +1,4 @@
-import { Center, Heading, VStack, Box } from 'native-base';
+import { Center, Heading, Box } from 'native-base';
 import { Image } from 'react-native';
 import React from 'react';
 import { Container } from '../../components/navigation/container';

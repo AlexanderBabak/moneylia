@@ -6,6 +6,8 @@ import { CardPayment } from '../../components/card-payment/card-payment';
 import { ListRenderItem } from 'react-native';
 import { Payment } from '../../interfaces/payment-interface';
 
+//сделать на серваке точно такой массив и фечить эти данные, они потом передаются в carPayment
+
 const payments = [
   {
     description:
@@ -213,7 +215,3 @@ export const PagoScreen = () => {
     </Container>
   );
 };
-
-/*
-<StatusBar backgroundColor="#BF7EE6" barStyle="default" />
-*/

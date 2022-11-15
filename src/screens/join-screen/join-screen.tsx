@@ -1,16 +1,9 @@
 import React from 'react';
-import {
-  Center,
-  Heading,
-  Text,
-  VStack,
-  Pressable,
-  Box,
-  Link,
-} from 'native-base';
+import { Center, Heading, Text, VStack, Link } from 'native-base';
 import { Image } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../interfaces/navigation-interfaces';
+import { ButtonStyled } from '../../components/shared/button-styled';
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'JoinScreen'>;
@@ -38,36 +31,13 @@ export const JoinScreen: React.FC<Props> = ({ navigation }) => {
               quis erat a sit.
             </Text>
           </VStack>
-          {/* сделать shared */}
-          <Pressable
+
+          <ButtonStyled
+            title="Join for free"
+            color="brand.main"
+            pressedColor="text.main"
             onPress={() => navigation.navigate('Main')}
-            alignSelf="stretch"
-          >
-            {({ isPressed }) => (
-              <Box
-                bg={isPressed ? 'text.main' : 'brand.main'}
-                style={{
-                  transform: [
-                    {
-                      scale: isPressed ? 0.96 : 1,
-                    },
-                  ],
-                }}
-                p="5"
-                rounded="6"
-                alignItems="center"
-              >
-                <Text
-                  fontSize={18}
-                  fontWeight={600}
-                  lineHeight={18}
-                  color="white"
-                >
-                  Join for free
-                </Text>
-              </Box>
-            )}
-          </Pressable>
+          />
 
           <Link lineHeight={21} color="text.main" href="https://nativebase.io">
             Don't have SPID or CIE? Find out more

@@ -1,25 +1,16 @@
 import React from 'react';
-import {
-  Box,
-  HStack,
-  ScrollView,
-  StatusBar,
-  Text,
-  useTheme,
-  VStack,
-} from 'native-base';
+import { Box, HStack, ScrollView, StatusBar, Text, VStack } from 'native-base';
 import { Container } from '../../components/navigation/container';
 import { CardUser } from '../../components/card-user/card-user';
+import { CardContributions } from '../../components/card-contributions/card-contributions';
 import PaidIcon from '../../assets/svg-icons/paid-icon';
 import DueIcon from '../../assets/svg-icons/due-icon';
 import AdvancePaymentIcon from '../../assets/svg-icons/advance-payment-icon';
 import ModularityIcon from '../../assets/svg-icons/modularity-icon';
-import { CardContributions } from '../../components/card-contributions/card-contributions';
 
 //здесь получаю данные о юзере и деньгах с сервера, аксиос гет с json-sserver
 
 export const DashboardScreen = () => {
-  const { colors } = useTheme();
   return (
     <ScrollView>
       <StatusBar
@@ -31,7 +22,6 @@ export const DashboardScreen = () => {
         <Box
           height={193}
           bgColor="brand.main"
-          // bgColor="amber.500"
           padding={4}
           borderBottomRadius={16}
         >

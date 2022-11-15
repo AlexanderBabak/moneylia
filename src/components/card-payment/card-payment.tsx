@@ -36,6 +36,7 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
           marginBottom={3}
           shadow={'0'}
           justifyContent="space-between"
+          space={2}
           style={{
             transform: [
               {
@@ -58,6 +59,7 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
             width="100%"
             justifyContent="space-between"
             height="80%"
+            flex={1}
           >
             <Text
               textTransform="uppercase"
