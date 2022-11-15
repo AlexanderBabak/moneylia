@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, HStack, Text, useTheme, VStack } from 'native-base';
-
 import UserIcon from '../../assets/svg-icons/user-icon';
 import { TextItemStyled } from './text-item-styled';
 
@@ -25,14 +24,14 @@ export const CardUser: React.FC<Props> = ({
     <Box
       height={178}
       width="90%"
+      padding={6}
+      margin="auto"
+      marginTop={'-24'}
+      marginBottom={1}
       bgColor="white"
       borderRadius={12}
-      marginTop={'-24'}
-      margin="auto"
       shadow={0}
-      padding={6}
       justifyContent="space-between"
-      marginBottom={1}
     >
       <HStack alignItems="center" space={2}>
         <UserIcon color={colors.brand.main} width={20} height={20} />

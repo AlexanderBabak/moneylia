@@ -28,14 +28,14 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
         <HStack
           height="80px"
           width="100%"
-          bgColor={isPressed ? 'purple.100' : 'white'}
-          rounded="lg"
           margin="auto"
-          alignItems="center"
-          padding={3}
           marginBottom={3}
-          shadow={'0'}
+          padding={3}
           justifyContent="space-between"
+          alignItems="center"
+          rounded="lg"
+          shadow={'0'}
+          bgColor={isPressed ? 'purple.100' : 'white'}
           space={2}
           style={{
             transform: [
@@ -48,8 +48,8 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
           <Center
             w="56px"
             h="56px"
-            bgColor="rgba(0, 102, 204, 0.1)"
             rounded="lg"
+            bgColor="rgba(0, 102, 204, 0.1)"
           >
             <PagoPaLogoIcon width={50} height={45} color="#BF7EE6" />
           </Center>
@@ -57,8 +57,8 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
           <VStack
             maxWidth={230}
             width="100%"
-            justifyContent="space-between"
             height="80%"
+            justifyContent="space-between"
             flex={1}
           >
             <Text
@@ -67,8 +67,8 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
               fontSize={12}
               lineHeight={15}
               color="text.neutralDark"
+              numberOfLines={2}
             >
-              {/* здесь функция сокращает текст */}
               {payment.description}
             </Text>
             <HStack justifyContent="space-between">

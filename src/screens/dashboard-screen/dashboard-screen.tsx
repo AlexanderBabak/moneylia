@@ -1,16 +1,19 @@
 import React from 'react';
 import { Box, HStack, ScrollView, StatusBar, Text, VStack } from 'native-base';
-import { Container } from '../../components/navigation/container';
+import { Container } from '../../navigation/container';
 import { CardUser } from '../../components/card-user/card-user';
 import { CardContributions } from '../../components/card-contributions/card-contributions';
 import PaidIcon from '../../assets/svg-icons/paid-icon';
 import DueIcon from '../../assets/svg-icons/due-icon';
 import AdvancePaymentIcon from '../../assets/svg-icons/advance-payment-icon';
 import ModularityIcon from '../../assets/svg-icons/modularity-icon';
+import { useShortName } from '../../hooks/useShortName';
 
 //здесь получаю данные о юзере и деньгах с сервера, аксиос гет с json-sserver
 
 export const DashboardScreen = () => {
+  const { shortName } = useShortName('John Simpson');
+
   return (
     <ScrollView>
       <StatusBar
@@ -26,7 +29,7 @@ export const DashboardScreen = () => {
           borderBottomRadius={16}
         >
           <Text fontWeight={400} fontSize={32} color="white" lineHeight={38}>
-            Hello, John S.
+            Hello, {shortName}
           </Text>
           <Text fontWeight={400} color="white" lineHeight={21}>
             Welcome in Moneylia

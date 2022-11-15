@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Pressable, HStack, useTheme, Box } from 'native-base';
 import { Alert } from 'react-native';
-import LogoIcon from '../../assets/svg-icons/logo-icon';
-import ChatIcon from '../../assets/svg-icons/chat-icon';
+import LogoIcon from '../assets/svg-icons/logo-icon';
+import ChatIcon from '../assets/svg-icons/chat-icon';
 import {
   ColorType,
   ResponsiveValue,

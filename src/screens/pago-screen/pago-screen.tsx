@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Box, HStack, Heading, FlatList } from 'native-base';
-import { Container } from '../../components/navigation/container';
+import { Container } from '../../navigation/container';
 import PagoPaLogoIcon from '../../assets/svg-icons/pago-pa-logo-icon';
 import { CardPayment } from '../../components/card-payment/card-payment';
 import { ListRenderItem } from 'react-native';
@@ -11,7 +11,7 @@ import { Payment } from '../../interfaces/payment-interface';
 const payments = [
   {
     description:
-      'subjective and supplementary contribution year 2021 expires...',
+      'subjective and supplementary contribution year 2021 expires contribution',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -48,7 +48,7 @@ const payments = [
   },
   {
     description:
-      'subjective and supplementary contribution year 2021 expires...',
+      'subjective and supplementary contribution year 2021 expires contribution',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -60,8 +60,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -73,8 +72,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 3,234.99',
     address: {
@@ -86,8 +84,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -123,8 +120,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -136,8 +132,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 1,234.99',
     address: {
@@ -149,8 +144,7 @@ const payments = [
     noticeCode: '301000000014982222',
   },
   {
-    description:
-      'subjective and supplementary contribution year 2021 expires...',
+    description: 'subjective and supplementary contribution year 2021 expires',
     expiryDate: '28/02/2022',
     sum: '€ 3,234.99',
     address: {

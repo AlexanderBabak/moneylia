@@ -9,6 +9,7 @@ import DashboardTabIcon from '../../assets/svg-icons/dashboard-tab-icon';
 import ExtractTabIcon from '../../assets/svg-icons/extract-tab-icon';
 import PagoPaTabIcon from '../../assets/svg-icons/pago-pa-tab-icon';
 import ProfileTabIcon from '../../assets/svg-icons/profile-tab-icon';
+
 const Tab = createBottomTabNavigator();
 
 export const MainApp = () => {

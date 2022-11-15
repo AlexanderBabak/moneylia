@@ -27,7 +27,7 @@ export const PaymentDetailsScreen = () => {
           title="Causal"
           textTransform="uppercase"
           details={[
-            'subjective and supplementary contribution year 2021 expiry',
+            'subjective and supplementary contribution year 2021 expires',
             '23/05/2022',
           ]}
         />
