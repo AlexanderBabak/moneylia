@@ -63,9 +63,6 @@ export const PagoScreen = () => {
             data={payments}
             renderItem={renderItem}
             keyExtractor={(item: Payment) => item.taxCode}
-            // refreshControl={
-            //   <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            // }
           />
         )}
       </Box>

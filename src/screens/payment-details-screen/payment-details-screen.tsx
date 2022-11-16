@@ -29,7 +29,7 @@ export const PaymentDetailsScreen = () => {
         />
         <PaymentDatailsItem
           title="Causal"
-          textTransform="uppercase"
+          uppercase={true}
           details={[payment.description, payment.expiryDate]}
         />
         <PaymentDatailsItem

@@ -18,7 +18,6 @@ export const CardUser: React.FC<Props> = ({
   country,
   number,
 }) => {
-  // const { user } = useAppSelector(state => state.user);
   const { colors } = useTheme();
 
   return (

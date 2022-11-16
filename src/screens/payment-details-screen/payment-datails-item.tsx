@@ -4,13 +4,13 @@ import React from 'react';
 type Props = {
   title: string;
   details: string[];
-  textTransform?: any;
+  uppercase?: boolean;
 };
 
 export const PaymentDatailsItem: React.FC<Props> = ({
   title,
   details,
-  textTransform,
+  uppercase,
 }) => {
   return (
     <>
@@ -30,7 +30,7 @@ export const PaymentDatailsItem: React.FC<Props> = ({
             key={index}
             fontSize={16}
             lineHeight={19}
-            textTransform={textTransform ? textTransform : 'none'}
+            textTransform={uppercase ? 'uppercase' : 'none'}
             color="text.neutralMedium"
           >
             {detail}
