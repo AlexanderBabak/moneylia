@@ -4,6 +4,7 @@ const newColorTheme = {
   brand: {
     main: '#7476ED',
     secondary: '#BF7EE6',
+    background: '#F8F4FF',
   },
   text: {
     main: '#3A3B7B',
@@ -11,6 +12,8 @@ const newColorTheme = {
     neutralMedium: '#6F6D7B',
     neutralLight: '#A5A5AA',
   },
+  divider: '#EAEAEC',
+  pressedButton: '#AE61D2',
 };
 
 const newFontConfigTheme = {

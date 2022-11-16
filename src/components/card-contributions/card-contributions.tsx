@@ -4,14 +4,13 @@ import { SvgProps } from 'react-native-svg';
 
 type Props = {
   title: string;
-  value?: string;
+  value?: string | null | undefined;
   icon: NamedExoticComponent<SvgProps>;
 };
 
 export const CardContributions: React.FC<Props> = ({ icon, title, value }) => {
-  const { colors } = useTheme();
-
   const IconComponent = icon;
+  const { colors } = useTheme();
 
   return (
     <Center h="124" bg="white" rounded="xl" flex={1} shadow={0}>
@@ -27,7 +26,7 @@ export const CardContributions: React.FC<Props> = ({ icon, title, value }) => {
       <Text
         fontSize={16}
         lineHeight={23}
-        color={value ? colors.text.main : '#F83E5A'}
+        color={value ? 'text.main' : 'error.500'}
       >
         {value ? value : 'Unavailable'}
       </Text>

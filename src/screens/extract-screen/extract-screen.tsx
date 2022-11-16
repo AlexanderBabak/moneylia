@@ -1,23 +1,25 @@
-import { Text, HStack, Center, useTheme } from 'native-base';
 import React from 'react';
-
-import { Container } from '../../components/navigation/container';
+import { Center, Heading, Box } from 'native-base';
+import { Image } from 'react-native';
+import { Container } from '../../navigation/container';
 
 export const ExtractScreen = () => {
-  const { colors } = useTheme();
   return (
-    <Container bgColor="brand.main" statusBarColor="#7476ED">
-      <Text fontFamily="mono" fontWeight={500} fontSize={30} color="text.main">
-        Extract screen
-      </Text>
-      <HStack space={2} padding={2}>
-        <Center h="40" bg="primary.300" rounded="md" flex={1}>
-          Hello
-        </Center>
-        <Center h="40" bg="primary.300" rounded="md" flex={1}>
-          Hello
-        </Center>
-      </HStack>
+    <Container bgColor="brand.main">
+      <Center bg="white" height="100%" paddingBottom={20}>
+        <Image source={require('../../assets/images/join-screen-image.png')} />
+        <Box maxW={250}>
+          <Heading
+            fontWeight={600}
+            fontSize={32}
+            lineHeight={38}
+            color="text.main"
+            textAlign="center"
+          >
+            Your ad could be here
+          </Heading>
+        </Box>
+      </Center>
     </Container>
   );
 };
