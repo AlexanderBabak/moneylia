@@ -4,11 +4,11 @@ import UserIcon from '../../assets/svg-icons/user-icon';
 import { TextItemStyled } from './text-item-styled';
 
 type Props = {
-  status: string;
-  birthday: string;
-  city: string;
-  country: string;
-  number: string;
+  status: string | undefined;
+  birthday: string | undefined;
+  city: string | undefined;
+  country: string | undefined;
+  number: string | undefined;
 };
 
 export const CardUser: React.FC<Props> = ({
@@ -18,6 +18,7 @@ export const CardUser: React.FC<Props> = ({
   country,
   number,
 }) => {
+  // const { user } = useAppSelector(state => state.user);
   const { colors } = useTheme();
 
   return (

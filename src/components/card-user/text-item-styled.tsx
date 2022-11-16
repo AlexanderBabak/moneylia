@@ -3,7 +3,7 @@ import { Text } from 'native-base';
 
 type Props = {
   title: string;
-  description: string;
+  description: string | undefined;
   color?: string;
 };
 

@@ -3,12 +3,12 @@ import { VStack } from 'native-base';
 import { PaymentDatailsItem } from './payment-datails-item';
 import { PaymentDetailsNotice } from './payment-details-notice';
 import { PaymentDetailsTotal } from './payment-details-total';
-
-// если будет время, сделать фетч на отдельные данные
-
-// can get ID for fetching data
+import { useAppSelector } from '../../redux/reduxType';
 
 export const PaymentDetailsScreen = () => {
+  const { payments } = useAppSelector(state => state.payments);
+  const payment = payments![0];
+
   return (
     <VStack
       h="100%"
@@ -21,24 +21,28 @@ export const PaymentDetailsScreen = () => {
 
         <PaymentDatailsItem
           title="Creditor"
-          details={['ENPACL', 'Via del Caravaggio n. 78', '00147 (RM)']}
+          details={[
+            payment.address.code,
+            payment.address.street,
+            payment.address.postCode,
+          ]}
         />
         <PaymentDatailsItem
           title="Causal"
           textTransform="uppercase"
-          details={[
-            'subjective and supplementary contribution year 2021 expires',
-            '23/05/2022',
-          ]}
+          details={[payment.description, payment.expiryDate]}
         />
-        <PaymentDatailsItem title="Expiry date" details={['23/05/2022']} />
+        <PaymentDatailsItem
+          title="Expiry date"
+          details={[payment.expiryDate]}
+        />
         <PaymentDatailsItem
           title="Creditor tax code"
-          details={['8321911732424']}
+          details={[payment.taxCode]}
         />
         <PaymentDatailsItem
           title="Notice code"
-          details={['301000000014982222']}
+          details={[payment.noticeCode]}
         />
       </VStack>
 
@@ -46,104 +50,3 @@ export const PaymentDetailsScreen = () => {
     </VStack>
   );
 };
-
-/*
-<VStack paddingY="14px">
-          <Text
-            fontSize={16}
-            fontWeight={600}
-            lineHeight={20}
-            color="text.neutralDark"
-            marginBottom="2px"
-          >
-            Creditor
-          </Text>
-         adress.code 
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            ENPACL
-          </Text>
-          adress.street
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            Via del Caravaggio n. 78
-          </Text>
-          adress.postCode 
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            00147 (RM)
-          </Text>
-        </VStack>
-
-
-        <VStack paddingY="14px">
-          <Text
-            fontSize={16}
-            fontWeight={600}
-            lineHeight={20}
-            color="text.neutralDark"
-            marginBottom="2px"
-          >
-            Causal
-          </Text>
-          * description *
-          <Text
-            fontSize={16}
-            lineHeight={19}
-            color="text.neutralMedium"
-            textTransform="uppercase"
-          >
-            subjective and supplementary contribution year 2021 expiry
-          </Text>
-          expiryDate 
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            23/05/2022
-          </Text>
-        </VStack>
-
-                <VStack paddingY="14px">
-          <Text
-            fontSize={16}
-            fontWeight={600}
-            lineHeight={20}
-            color="text.neutralDark"
-            marginBottom="2px"
-          >
-            Expiry date
-          </Text>
-          /* expiryDate *
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            23/05/2022
-          </Text>
-        </VStack>
-
-
-              <VStack paddingY="14px">
-          <Text
-            fontSize={16}
-            fontWeight={600}
-            lineHeight={20}
-            color="text.neutralDark"
-            marginBottom="2px"
-          >
-            Creditor tax code
-          </Text>
-          {/* taxCode 
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            8321911732424
-          </Text>
-        </VStack>
-
-           <VStack paddingY="14px">
-          <Text
-            fontSize={16}
-            fontWeight={600}
-            lineHeight={20}
-            color="text.neutralDark"
-            marginBottom="2px"
-          >
-            Notice code
-          </Text>
-          {/* noticeCode *
-          <Text fontSize={16} lineHeight={19} color="text.neutralMedium">
-            301000000014982222
-          </Text>
-        </VStack>
-*/

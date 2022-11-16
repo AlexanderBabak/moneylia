@@ -1,186 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Text, Box, HStack, Heading, FlatList, useTheme } from 'native-base';
 import { Container } from '../../navigation/container';
 import { CardPayment } from '../../components/card-payment/card-payment';
+import { PagoLoader } from '../../components/loader/pago-loader';
 import { ListRenderItem } from 'react-native';
 import { Payment } from '../../interfaces/payment-interface';
+import { useAppDispatch, useAppSelector } from '../../redux/reduxType';
+import { getPaymentsThunk } from '../../redux/slices/paymentsThunk';
 import PagoPaLogoIcon from '../../assets/svg-icons/pago-pa-logo-icon';
-import axios from 'axios';
-import { Alert } from 'react-native';
-
-//сделать на серваке точно такой массив и фечить эти данные, они потом передаются в carPayment
-
-// const payments = [
-//   {
-//     description:
-//       'subjective and supplementary contribution year 2021 expires contribution',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911704444',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'payment on deposit',
-//     expiryDate: '31/01/2022',
-//     sum: '€ 234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911732444',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'payment on deposit',
-//     expiryDate: '23/05/2022',
-//     sum: '€ 634.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8321911732444',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description:
-//       'subjective and supplementary contribution year 2021 expires contribution',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911778444',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911704984',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 3,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911732454',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911704944',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'payment on deposit',
-//     expiryDate: '31/01/2022',
-//     sum: '€ 234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911737444',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'payment on deposit',
-//     expiryDate: '23/05/2022',
-//     sum: '€ 634.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8321911732424',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911778440',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 1,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911704982',
-//     noticeCode: '301000000014982222',
-//   },
-//   {
-//     description: 'subjective and supplementary contribution year 2021 expires',
-//     expiryDate: '28/02/2022',
-//     sum: '€ 3,234.99',
-//     address: {
-//       code: 'ENPACL',
-//       street: 'Via del Caravaggio n. 78',
-//       postCode: '00147 (RM)',
-//     },
-//     taxCode: '8011911732457',
-//     noticeCode: '301000000014982222',
-//   },
-// ];
 
 const renderItem: ListRenderItem<Payment> = ({ item }) => (
   <CardPayment payment={item} />
 );
 
 export const PagoScreen = () => {
-  const [payments, setPayments] = useState();
-  const [loading, setLoading] = useState(true);
+  const { payments, loadingPayments, errorPayments } = useAppSelector(
+    state => state.payments,
+  );
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    axios
-      .get('https://6374a81308104a9c5f852e22.mockapi.io/payments')
-      .then(({ data }) => {
-        setPayments(data);
-      })
-      .catch(err => {
-        console.log(err);
-        Alert.alert('Error!', 'Fetching server error!');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+    dispatch(getPaymentsThunk());
+  }, [dispatch]);
 
   const { colors } = useTheme();
 
@@ -209,19 +51,14 @@ export const PagoScreen = () => {
         >
           Movements to pay
         </Heading>
-        <Text
-          fontFamily="mono"
-          lineHeight={21}
-          marginBottom={4}
-          color="text.neutralMedium"
-        >
+        <Text fontFamily="mono" lineHeight={21} color="text.neutralMedium">
           View pending transactions for the past two years and proceed to
           payment.
         </Text>
 
-        {loading ? (
-          <Text>Loading...</Text>
-        ) : (
+        {loadingPayments && <PagoLoader />}
+        {errorPayments && <Text>Error...</Text>}
+        {!loadingPayments && !errorPayments && (
           <FlatList
             data={payments}
             renderItem={renderItem}

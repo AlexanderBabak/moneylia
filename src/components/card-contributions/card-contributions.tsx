@@ -4,7 +4,7 @@ import { SvgProps } from 'react-native-svg';
 
 type Props = {
   title: string;
-  value?: string;
+  value?: string | null | undefined;
   icon: NamedExoticComponent<SvgProps>;
 };
 
