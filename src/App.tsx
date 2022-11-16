@@ -9,6 +9,7 @@ export const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
+
   return (
     <>
       <NativeBaseProvider theme={theme}>
