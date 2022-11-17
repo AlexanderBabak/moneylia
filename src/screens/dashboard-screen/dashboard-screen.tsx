@@ -4,7 +4,7 @@ import { Container } from '../../navigation/container';
 import { CardUser } from '../../components/card-user/card-user';
 import { CardContributions } from '../../components/card-contributions/card-contributions';
 import { DashboardLoader } from '../../components/loader/dashboard-loader';
-import { useShortName } from '../../hooks/useShortName';
+import { makeShortName } from '../../helpers/makeShortName';
 import { getUserThunk } from '../../redux/slices/userThunk';
 import { useAppDispatch, useAppSelector } from '../../redux/reduxType';
 import PaidIcon from '../../assets/svg-icons/paid-icon';
@@ -21,8 +21,6 @@ export const DashboardScreen = () => {
     dispatch(getUserThunk());
   }, [dispatch]);
 
-  const { shortName } = useShortName(user?.name);
-
   return (
     <ScrollView>
       <StatusBar
@@ -32,7 +30,7 @@ export const DashboardScreen = () => {
       />
       {loadingUser && <DashboardLoader />}
       {errorUser && <Text>Error...</Text>}
-      {!loadingUser && !errorUser && (
+      {!loadingUser && !errorUser && user && (
         <Container bgColor="brand.main">
           <Box
             height={193}
@@ -41,14 +39,14 @@ export const DashboardScreen = () => {
             bgColor="brand.main"
           >
             <Text fontWeight={400} fontSize={32} color="white" lineHeight={38}>
-              Hello, {shortName}
+              Hello, {makeShortName(user.name)}
             </Text>
             <Text fontWeight={400} color="white" lineHeight={21}>
               Welcome in Moneylia
             </Text>
           </Box>
           <CardUser
-            status={user?.status}
+            status={user.status}
             birthday="26/01/1994"
             city="Barcelona"
             country="ES"
@@ -70,23 +68,23 @@ export const DashboardScreen = () => {
                 <CardContributions
                   title="Paid"
                   icon={PaidIcon}
-                  value={user?.contributions[0].paid}
+                  value={user.contributions[0].paid}
                 />
                 <CardContributions
                   title="Due"
                   icon={DueIcon}
-                  value={user?.contributions[0].due}
+                  value={user.contributions[0].due}
                 />
               </HStack>
               <HStack space={4}>
                 <CardContributions
                   title="Advance payment"
-                  value={user?.contributions[0].advancePayment}
+                  value={user.contributions[0].advancePayment}
                   icon={AdvancePaymentIcon}
                 />
                 <CardContributions
                   title="Modularity"
-                  value={user?.contributions[0].modularity}
+                  value={user.contributions[0].modularity}
                   icon={ModularityIcon}
                 />
               </HStack>

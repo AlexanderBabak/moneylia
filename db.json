@@ -1,0 +1,179 @@
+{
+  "users": [
+    {
+      "name": "John Simpson",
+      "id": "1",
+      "status": "Subscribed",
+      "birthday": "1994-01-26",
+      "city": "Barcelona",
+      "country": "es",
+      "currency": "euro",
+      "contributions": [
+        {
+          "paid": null,
+          "due": null,
+          "advancePayment": "€ 1,230.00",
+          "modularity": "€ 340.59"
+        }
+      ],
+      "payments": [
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911704444,
+          "noticeCode": 301000000014982222,
+          "id": "1"
+        },
+        {
+          "description": "payment on deposit",
+          "expiryDate": "31/01/2022",
+          "sum": "€ 234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911732444,
+          "noticeCode": 301000000014982222,
+          "id": "2"
+        },
+        {
+          "description": "payment on deposit",
+          "expiryDate": "23/05/2022",
+          "sum": "€ 634.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8321911732444,
+          "noticeCode": 301000000014982222,
+          "id": "3"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires contribution",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911778444,
+          "noticeCode": 301000000014982222,
+          "id": "4"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911704984,
+          "noticeCode": 301000000014982222,
+          "id": "5"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 3,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911732454,
+          "noticeCode": 301000000014982222,
+          "id": "6"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911704944,
+          "noticeCode": 301000000014982222,
+          "id": "7"
+        },
+        {
+          "description": "payment on deposit",
+          "expiryDate": "31/01/2022",
+          "sum": "€ 234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911737444,
+          "noticeCode": 301000000014982222,
+          "id": "8"
+        },
+        {
+          "description": "payment on deposit",
+          "expiryDate": "23/05/2022",
+          "sum": "€ 634.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8321911732424,
+          "noticeCode": 301000000014982222,
+          "id": "9"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911778440,
+          "noticeCode": 301000000014982222,
+          "id": "10"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 1,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911704982,
+          "noticeCode": 301000000014982222,
+          "id": "11"
+        },
+        {
+          "description": "subjective and supplementary contribution year 2021 expires",
+          "expiryDate": "28/02/2022",
+          "sum": "€ 3,234.99",
+          "address": {
+            "code": "ENPACL",
+            "street": "Via del Caravaggio n. 78",
+            "postCode": "00147 (RM)"
+          },
+          "taxCode": 8011911732457,
+          "noticeCode": 301000000014982222,
+          "id": "12"
+        }
+      ]
+    }
+  ]
+}

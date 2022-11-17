@@ -10,8 +10,8 @@ import { GestureResponderEvent } from 'react-native';
 type Props = {
   color: ResponsiveValue<ColorType | ILinearGradientProps>;
   pressedColor: ResponsiveValue<ColorType | ILinearGradientProps>;
-  title: string;
   onPress: null | ((event: GestureResponderEvent) => void) | undefined;
+  title: string;
 };
 
 export const ButtonStyled: React.FC<Props> = ({
