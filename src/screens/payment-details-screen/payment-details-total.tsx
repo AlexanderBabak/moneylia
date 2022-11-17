@@ -3,9 +3,7 @@ import { Heading, VStack, Text, HStack, Divider } from 'native-base';
 import { Alert } from 'react-native';
 import { ButtonStyled } from '../../components/shared/button-styled';
 
-//здесь получает проп суммы
-
-export const PaymentDetailsTotal = () => {
+export const PaymentDetailsTotal = ({ total }: { total: String }) => {
   return (
     <VStack>
       <Divider bgColor="#EAEAEC" />
@@ -21,7 +19,7 @@ export const PaymentDetailsTotal = () => {
             Total due
           </Heading>
           <Text fontSize={20} lineHeight={24} color="error.500">
-            € 1,634.99
+            {total}
           </Text>
         </HStack>
 

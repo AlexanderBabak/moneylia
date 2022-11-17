@@ -7,11 +7,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../interfaces/navigation-interfaces';
 
-type Props = {
-  payment: Payment;
-};
-
-export const CardPayment: React.FC<Props> = ({ payment }) => {
+export const CardPayment = ({ payment }: { payment: Payment }) => {
   const navigation: NativeStackNavigationProp<
     RootStackParamList,
     'PaymentDetails'
@@ -20,7 +16,7 @@ export const CardPayment: React.FC<Props> = ({ payment }) => {
     <Pressable
       onPress={() => {
         navigation.navigate('PaymentDetails', {
-          paymentId: payment.taxCode,
+          paymentId: payment.id,
         });
       }}
     >

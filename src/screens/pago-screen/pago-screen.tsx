@@ -62,7 +62,7 @@ export const PagoScreen = () => {
           <FlatList
             data={payments}
             renderItem={renderItem}
-            keyExtractor={(item: Payment) => item.taxCode}
+            keyExtractor={(item: Payment) => item.id}
           />
         )}
       </Box>
